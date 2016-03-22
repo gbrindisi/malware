@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">Ingresa los detalles de la tarjeta de crédito que deseas utilizar con Google Wallet.</string>
+    <string name="card_number">Número de tarjeta</string>
+    <string name="hint_expiration_month">Mes</string>
+    <string name="hint_expiration_year">Año</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">CVC</string>
+    <string name="cvc_code_popup_visa_description"><b>Discover, MasterCard, Visa y Visa Electron</b>"
+El código de verificación de la tarjeta (CVC) está formado por los últimos tres dígitos del número que aparece en el dorso de la tarjeta, en el espacio reservado para la firma."</string>
+    <string name="cvc_code_popup_amex_description"><b>American Express</b>"
+El código de verificación de la tarjeta (CVC) está formado por los cuatro dígitos que figuran en el lado derecho del frente de la tarjeta."</string>
+    <string name="add_credit_card">Agregar tarjeta</string>
+    <string name="add_instrument_continue">Continuar</string>
+    <string name="i18n_locality_label">Ciudad</string>
+    <string name="i18n_address_line1_label">Dirección (calle y número)</string>
+    <string name="i18n_postal_code_label">Código postal</string>
+    <string name="cancel">Cancelar</string>
+    <string name="phone_number">Número de teléfono</string>
+    <string name="first_name">Nombre</string>
+    <string name="name_on_card">Nombre del titular de la tarjeta</string>
+    <string name="last_name">Apellido</string>
+    <string name="enter_your_address_sentence">Ingresa la dirección de facturación que desees guardar en tu Cuenta de Google.</string>
+    <string name="change_password_restrict_label">Contraseña</string>
+    <string name="common_google_play_services_update_title">Actualizar Play Services</string>
+
+</resources>

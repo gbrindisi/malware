@@ -1,0 +1,7 @@
+{% load info_filters %}
+<ul class="list-group">
+    {% for r in reports %}
+        <li class="list-group-item"><a class="popupwindow" rel="center:1,width:1400,height:900,scrollbars:1"
+               href="{% url 'crash_report' r|named_field:"_id" %}">{{ r.time|timestamp|date:"d M Y H:i:s e" }}</a></li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,35 @@
+{% extends "admin/change_list.html" %}
+{% load i18n admin_static admin_list bootstrapped_goodies_tags bootstrap3 %}
+{% load url from future %}
+{% load admin_urls %}
+{% load info_filters %}
+
+{% if not is_popup %}
+    {% block breadcrumbs %}
+        <ul class="breadcrumb">
+            <li><a href="{% url 'admin:index' %}">{% trans 'Home' %}</a></li>
+            <li>Countries</li>
+        </ul>
+    {% endblock %}
+{% endif %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block object-tools %}
+{% endblock %}
+
+{% block content %}
+    <div class="row-fluid">
+
+        {% for d in data %}
+            {% if d.2 %}
+                <a href="{% url 'admin:smsapp_phonedata_changelist' %}?country={{ d.2|urlencode }}">
+                    {% include 'includes/country.html' %}
+                </a>
+            {% endif %}
+        {% endfor %}
+
+    </div>
+{% endblock %}
+
+

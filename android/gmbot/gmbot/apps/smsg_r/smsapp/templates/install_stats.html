@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Installation statistics{% endblock %}
+{% block page_header %}<h1>Installation statistics</h1>{% endblock %}
+{% block content %}
+    <div class="jumbotron">
+        <ul class="nav nav-pills nav-stacked">
+            <li>Total installs <span class="badge">{{ total_bots }}</span></li>
+            <li>Installs today <span class="badge">{{ bots_today }}</span></li>
+        </ul>
+    </div>
+{% endblock content %}

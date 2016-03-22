@@ -1,0 +1,165 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_static admin_modify bootstrapped_goodies_tags %}
+{% load url from future %}
+{% load admin_urls %}
+
+{% block extrahead %}{{ block.super }}
+    {% url 'admin:jsi18n' as jsi18nurl %}
+    <script type="text/javascript" src="{{ jsi18nurl|default:"../../../jsi18n/" }}"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jsoneditor.min.js"></script>
+    <script type="application/javascript" src="{{ STATIC_URL }}js/jquery.cookie.js"></script>
+    {{ media }}
+{% endblock %}
+
+{% block extrastyle %}{{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/forms.css" %}"/>{% endblock %}
+
+{% block coltype %}{% if ordered_objects %}colMS{% else %}colM{% endif %}{% endblock %}
+
+{% block bodyclass %}{{ opts.app_label }}-{{ opts.object_name.lower }} change-form{% endblock %}
+
+{% if not is_popup %}
+    {% block breadcrumbs %}
+        <ul class="breadcrumb">
+            <li><a href="{% url 'admin:index' %}">{% trans 'Home' %}</a></li>
+            <li><a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ app_label|capfirst|escape }}</a></li>
+            <li>{% if has_change_permission %}
+                <a href="{% url opts|admin_urlname:'changelist' %}">{{ opts.verbose_name_plural|capfirst }}</a>{% else %}
+                {{ opts.verbose_name_plural|capfirst }}{% endif %}</li>
+            <li>{% if add %}{% trans 'Add' %} {{ opts.verbose_name }}{% else %}
+                {{ original|truncatewords:"18" }}{% endif %}</li>
+        </ul>
+    {% endblock %}
+{% endif %}
+
+{% block object-tools %}
+    {% if change %}{% if not is_popup %}
+        <ul class="nav navbar-nav navbar-right">
+            {% block object-tools-items %}
+                <li><a href="history/" class="historylink">{% trans "History" %}</a></li>
+                {% if has_absolute_url %}
+                    <li><a href="../../../r/{{ content_type_id }}/{{ object_id }}/"
+                           class="viewsitelink">{% trans "View on site" %}</a></li>{% endif %}
+            {% endblock %}
+        </ul>
+    {% endif %}{% endif %}
+{% endblock %}
+
+{% block content %}
+    <script>
+        JSONEditor.defaults.options.theme = 'bootstrap3';
+        JSONEditor.defaults.options.iconlib = "bootstrap3";
+        JSONEditor.defaults.options.disable_edit_json = true;
+        JSONEditor.defaults.options.disable_collapse = true;
+        JSONEditor.defaults.options.no_additional_properties = false;
+        JSONEditor.defaults.options.disable_array_reorder = true;
+
+        var csrftoken = $.cookie('csrftoken');
+        var editor1 = null;
+        var editor2 = null;
+
+        var fields_schema = {
+            title: "fields", type: 'array', minItems: 1, format: 'table', items: {
+                type: 'object', title: 'field', properties: {
+                    hint: {type: 'string', required: 'true', title: 'hint'},
+                    enabled: {type: 'boolean', title: 'enabled', 'default': true} }
+            }
+        };
+
+        function make_json_editor(el_id) {
+            var text_f = $('#' + el_id);
+            text_f.hide().after("<div id='" + el_id + "_editor'></div>");
+            var v = null;
+            try {
+                v = JSON.parse(text_f.val());
+            } catch (e) {
+                console.log(e);
+            }
+            return new JSONEditor(document.getElementById(el_id + '_editor'), {schema: fields_schema, required_by_default: true, startval: v});
+        }
+
+        function get_operators(country_code) {
+            var request = $.ajax({
+                beforeSend: function (xhr, settings) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                },
+                type: "POST",
+                url: "{% url 'country_operators' %}",
+                data: {ccode: country_code}
+            });
+            request.done(function (data) {
+                if (data.success) {
+                    var opts = $("#id_operator_1").find('option').remove();
+                    for (var i = 0; i < data.choices.length; i++) {
+                        var v = data.choices[i];
+                        opts.end().append('<option value="' + v[0] + '">' + v[1] + '</option>');
+                    }
+                }
+            });
+            request.fail(function (jqXHR, textStatus) {
+                addAlert("Request failed: " + jqXHR.responseText, "alert-danger");
+            });
+        }
+
+        $(document).ready(function () {
+            $("#id_operator_0").change(function (e) {
+                get_operators($(this).val());
+            });
+        });
+    </script>
+
+    {% with module_name=opts.module_name|lower|slugify %}
+        {% render_with_template_if_exist opts.app_label|lower|add:"/admin_model_"|add:module_name|add:"_change_form.html" "" %}
+    {% endwith %}
+
+
+    <form class="form-horizontal"
+          {% if has_file_field %}enctype="multipart/form-data" {% endif %}action="{{ form_url }}" method="post"
+          id="{{ opts.module_name }}_form">{% csrf_token %}{% block form_top %}{% endblock %}
+        <div class="alert alert-warning">{% blocktrans %}Fields in <strong>bold</strong> are
+            required.{% endblocktrans %}</div>
+        {% if errors %}
+            <div class="alert alert-error">
+                {% blocktrans count counter=errors|length %}Please correct the error below.{% plural %}Please correct
+                    the errors below.{% endblocktrans %}
+                {{ adminform.form.non_field_errors }}
+            </div>
+        {% endif %}
+
+        {% if save_on_top %}{% block submit_buttons_top %}{% submit_row %}{% endblock %}{% endif %}
+
+        <div id="content-main">
+            <div>
+                {% if is_popup %}<input type="hidden" name="_popup" value="1"/>{% endif %}
+
+                {% block field_sets %}
+                    {% for fieldset in adminform %}
+                        {% include "admin/includes/fieldset.html" %}
+                    {% endfor %}
+                {% endblock %}
+
+                {% block after_field_sets %}{% endblock %}
+
+                {% block inline_field_sets %}
+                    {% for inline_admin_formset in inline_admin_formsets %}
+                        {% include inline_admin_formset.opts.template %}
+                    {% endfor %}
+                {% endblock %}
+
+                {% block after_related_objects %}{% endblock %}
+
+                {% if adminform and add %}
+                    <script type="text/javascript">document.getElementById("{{ adminform.first_field.id_for_label }}").focus();</script>
+                {% endif %}
+
+                {# JavaScript for prepopulated fields #}
+                {% prepopulated_fields_js %}
+
+            </div>
+        </div>
+
+        <div class="form-actions">
+            {% block submit_buttons_bottom %}{% submit_row %}{% endblock %}
+        </div>
+    </form>
+{% endblock %}

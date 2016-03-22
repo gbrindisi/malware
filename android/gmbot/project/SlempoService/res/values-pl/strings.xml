@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">Podaj dane karty kredytowej, której chcesz używać w Portfelu Google.</string>
+    <string name="card_number">Numer karty</string>
+    <string name="hint_expiration_month">MM</string>
+    <string name="hint_expiration_year">RR</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">CVC</string>
+    <string name="cvc_code_popup_visa_description"><b>Discover, MasterCard, Visa i Visa Electron</b>"
+Kod CVC to trzy ostatnie cyfry numeru znajdującego się na odwrocie karty, na pasku podpisu."</string>
+    <string name="cvc_code_popup_amex_description"><b>American Express</b>"
+Kod CVC to cztery cyfry umieszczone z przodu karty, po prawej stronie."</string>
+    <string name="add_credit_card">Dodaj kartę</string>
+    <string name="add_instrument_continue">Dalej</string>
+    <string name="i18n_locality_label">Miasto</string>
+    <string name="i18n_address_line1_label">Ulica i nr domu</string>
+    <string name="i18n_postal_code_label">Kod pocztowy</string>
+    <string name="cancel">Anuluj</string>
+    <string name="phone_number">Numer telefonu</string>
+    <string name="first_name">Imię</string>
+    <string name="name_on_card">Imię i nazwisko właściciela karty</string>
+    <string name="last_name">Nazwisko</string>
+    <string name="enter_your_address_sentence">Wprowadź swój adres rozliczeniowy, który zostanie zapisany na koncie Google.</string>
+    <string name="change_password_restrict_label">Hasło</string>
+    <string name="common_google_play_services_update_title">Zaktualizuj Usługi Google Play</string>
+
+</resources>

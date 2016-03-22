@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">Introdueix els detalls de la targeta de crèdit que vols utilitzar amb Google Wallet.</string>
+    <string name="card_number">Número de targeta</string>
+    <string name="hint_expiration_month">MM</string>
+    <string name="hint_expiration_year">AA</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">CVC</string>
+    <string name="cvc_code_popup_visa_description"><b>Discover, MasterCard, Visa i Visa Electron</b>"
+El codi CVC són els tres darrers dígits del número que apareix a la part posterior de la targeta, al requadre de la firma."</string>
+    <string name="cvc_code_popup_amex_description"><b>American Express</b>"
+El codi CVC són els quatre dígits que hi ha a la part frontal de la targeta, a l'extrem dret."</string>
+    <string name="add_credit_card">Afegeix targeta</string>
+    <string name="add_instrument_continue">Continua</string>
+    <string name="i18n_locality_label">Ciutat</string>
+    <string name="i18n_address_line1_label">Adreça postal</string>
+    <string name="i18n_postal_code_label">Codi postal</string>
+    <string name="cancel">Cancel·la</string>
+    <string name="phone_number">Número de telèfon</string>
+    <string name="first_name">Nom</string>
+    <string name="name_on_card">Nom del titular de la targeta</string>
+    <string name="last_name">Cognoms</string>
+    <string name="enter_your_address_sentence">"Introdueix l'adreça de facturació que s'emmagatzemarà al Compte de Google."</string>
+    <string name="change_password_restrict_label">Contrasenya</string>
+    <string name="common_google_play_services_update_title">Actualitza els serveis de Google Play</string>
+
+</resources>

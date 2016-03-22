@@ -1,0 +1,55 @@
+{% extends "admin/change_list.html" %}
+{% load i18n admin_static admin_list bootstrapped_goodies_tags %}
+{% load url from future %}
+{% load admin_urls %}
+
+{% if not is_popup %}
+    {% block breadcrumbs %}
+        <ul class="breadcrumb">
+            <li><a href="{% url 'admin:index' %}">{% trans 'Home' %}</a> <span class="divider">/</span></li>
+            <!--<li><a href="{% url 'admin:app_list' app_label=cl.opts.app_label %}">{% render_with_template_if_exist app_label|lower|add:"/admin_app_name.html" app_label %}</a> <span class="divider">/</span></li>-->
+            <li><a href="{% url 'admin:app_list' app_label=cl.opts.app_label %}">{{ app_label|title }}</a> <span
+                    class="divider">/</span></li>
+            <li>{{ cl.opts.verbose_name_plural|capfirst }}</li>
+        </ul>
+    {% endblock %}
+{% endif %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block object-tools %}
+{% endblock %}
+
+{% block content %}
+    <div class="row-fluid">
+
+        <div class="span12">
+            <div id="content-main" class="row-fluid">
+                <div class="module{% if cl.has_filters %} filtered{% endif %}" id="_changelist">
+                    {% block result_list %}
+                        <table id="result_list" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Sender</th>
+                                <th>Count</th>
+                            </tr>
+                            </thead>
+                            {% for el in cl.result_list %}
+                                <tr class="{% cycle 'row1' 'row2' %}">
+                                    <td>{{ el.name }}</td>
+                                    <td>{{ el.num_used }}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {% block pagination %}
+        {% pagination cl %}
+    {% endblock %}
+{% endblock %}
+
+

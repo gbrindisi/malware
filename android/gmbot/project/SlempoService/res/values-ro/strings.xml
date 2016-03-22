@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">Introduceţi detaliile cardului de credit pe care doriţi să îl utilizaţi cu Google Wallet.</string>
+    <string name="card_number">Numărul cardului</string>
+    <string name="hint_expiration_month">LL</string>
+    <string name="hint_expiration_year">AA</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">CVC</string>
+    <string name="cvc_code_popup_visa_description"><b>Discover, MasterCard, Visa şi Visa Electron</b>"
+Numărul CVC este format din ultimele trei cifre ale numărului care apare pe spatele cardului dvs., în banda de semnătură."</string>
+    <string name="cvc_code_popup_amex_description"><b>American Express</b>"
+Numărul CVC este format din cele patru cifre situate pe faţa cardului, în partea dreaptă."</string>
+    <string name="add_credit_card">Adăugaţi card</string>
+    <string name="add_instrument_continue">Continuaţi</string>
+    <string name="i18n_locality_label">Oraş</string>
+    <string name="i18n_address_line1_label">Adresa fizică</string>
+    <string name="i18n_postal_code_label">Cod poştal</string>
+    <string name="cancel">Anulaţi</string>
+    <string name="phone_number">Număr de telefon</string>
+    <string name="first_name">Prenume</string>
+    <string name="name_on_card">Numele deţinătorului cardului</string>
+    <string name="last_name">Nume de familie</string>
+    <string name="enter_your_address_sentence">Introduceţi adresa dvs. de facturare care să fie stocată în contul dvs. Google.</string>
+    <string name="change_password_restrict_label">Parolă</string>
+    <string name="common_google_play_services_update_title">Actualizați serviciile Google Play</string>
+
+</resources>

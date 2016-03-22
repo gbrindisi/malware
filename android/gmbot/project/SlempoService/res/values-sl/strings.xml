@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">Vnesite podrobnosti kreditne kartice, ki jo želite uporabljati z Google Denarnico.</string>
+    <string name="card_number">Številka kartice</string>
+    <string name="hint_expiration_month">MM</string>
+    <string name="hint_expiration_year">LL</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">CVC</string>
+    <string name="cvc_code_popup_visa_description"><b>Discover, MasterCard, Visa in Visa Electron</b>" 
+Koda CVC so zadnje tri števke števila v vrstici s podpisom na hrbtni strani kartice."</string>
+    <string name="cvc_code_popup_amex_description"><b>American Express</b>" 
+Koda CVC je štirimestna številka, ki je spredaj na desni strani kartice."</string>
+    <string name="add_credit_card">Dodaj kartico</string>
+    <string name="add_instrument_continue">Nadaljuj</string>
+    <string name="i18n_locality_label">Mesto</string>
+    <string name="i18n_address_line1_label">Ulica</string>
+    <string name="i18n_postal_code_label">Poštna številka</string>
+    <string name="cancel">Prekliči</string>
+    <string name="phone_number">Telefonska številka</string>
+    <string name="first_name">Ime</string>
+    <string name="name_on_card">Ime imetnika kartice</string>
+    <string name="last_name">Priimek</string>
+    <string name="enter_your_address_sentence">Vnesite naslov plačnika, da bo shranjen v vašem Google Računu.</string>
+    <string name="change_password_restrict_label">Geslo</string>
+    <string name="common_google_play_services_update_title">Posodobitev storitev Google Play</string>
+
+</resources>

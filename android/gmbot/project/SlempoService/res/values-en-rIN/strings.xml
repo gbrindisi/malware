@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">Enter details about the credit card that you would like to use with Google Wallet.</string>
+    <string name="card_number">Card number</string>
+    <string name="hint_expiration_month">MM</string>
+    <string name="hint_expiration_year">YY</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">CVC</string>
+    <string name="cvc_code_popup_visa_description"><b>Discover, MasterCard, Visa and Visa Electron</b>"
+The CVC is the last three digits of the number that appears on the back of your card in the signature bar."</string>
+    <string name="cvc_code_popup_amex_description"><b>American Express</b>"
+The CVC is the four digits located on the front of the card, on the right-hand side."</string>
+    <string name="add_credit_card">Add card</string>
+    <string name="add_instrument_continue">Continue</string>
+    <string name="i18n_locality_label">City</string>
+    <string name="i18n_address_line1_label">Street address</string>
+    <string name="i18n_postal_code_label">Postcode</string>
+    <string name="cancel">Cancel</string>
+    <string name="phone_number">Phone number</string>
+    <string name="first_name">First name</string>
+    <string name="name_on_card">Cardholder name</string>
+    <string name="last_name">Last name</string>
+    <string name="enter_your_address_sentence">Please enter your billing address to be stored in your Google account.</string>
+    <string name="change_password_restrict_label">Password</string>
+    <string name="common_google_play_services_update_title">Update Google Play services</string>
+
+</resources>

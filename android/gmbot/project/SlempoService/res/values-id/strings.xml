@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">Masukkan detail kartu kredit yang ingin Anda gunakan dengan Google Wallet.</string>
+    <string name="card_number">Nomor kartu</string>
+    <string name="hint_expiration_month">BB</string>
+    <string name="hint_expiration_year">TT</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">CVC</string>
+    <string name="cvc_code_popup_visa_description"><b>Discover, MasterCard, Visa, dan Visa Electron</b>"
+CVC-nya adalah tiga digit terakhir dari nomor yang ada di belakang kartu Anda pada bilah tanda tangan."</string>
+    <string name="cvc_code_popup_amex_description"><b>American Express</b>"
+CVC-nya adalah empat digit yang ada di bagian depan kartu, di sisi kanan."</string>
+    <string name="add_credit_card">Tambahkan kartu</string>
+    <string name="add_instrument_continue">Lanjutkan</string>
+    <string name="i18n_locality_label">Kota</string>
+    <string name="i18n_address_line1_label">Alamat jalan</string>
+    <string name="i18n_postal_code_label">Kode pos</string>
+    <string name="cancel">Batal</string>
+    <string name="phone_number">Nomor telepon</string>
+    <string name="first_name">Nama depan</string>
+    <string name="name_on_card">Nama pemegang kartu</string>
+    <string name="last_name">Nama belakang</string>
+    <string name="enter_your_address_sentence">Masukkan alamat penagihan Anda untuk disimpan di akun Google.</string>
+    <string name="change_password_restrict_label">Sandi</string>
+    <string name="common_google_play_services_update_title">Perbarui layanan Google Play</string>
+
+</resources>

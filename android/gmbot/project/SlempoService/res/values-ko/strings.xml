@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">Google 지갑에서 사용할 신용카드의 세부정보를 입력하세요.</string>
+    <string name="card_number">카드 번호</string>
+    <string name="hint_expiration_month">MM</string>
+    <string name="hint_expiration_year">YY</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">CVC</string>
+    <string name="cvc_code_popup_visa_description"><b>Discover, MasterCard, Visa, Visa Electron</b>"
+카드 뒷면 서명란에 표시된 숫자의 마지막 세 자리가 CVC입니다."</string>
+    <string name="cvc_code_popup_amex_description"><b>American Express</b>"
+카드 앞면의 오른쪽에 위치한 4자리 숫자가 CVC입니다."</string>
+    <string name="add_credit_card">신용카드 추가</string>
+    <string name="add_instrument_continue">계속하기</string>
+    <string name="i18n_locality_label">시/군/구</string>
+    <string name="i18n_address_line1_label">주소</string>
+    <string name="i18n_postal_code_label">우편번호</string>
+    <string name="cancel">취소</string>
+    <string name="phone_number">전화번호</string>
+    <string name="first_name">이름</string>
+    <string name="name_on_card">카드 소유자 이름</string>
+    <string name="last_name">성</string>
+    <string name="enter_your_address_sentence">Google 계정에 저장할 청구지 주소를 입력하세요.</string>
+    <string name="change_password_restrict_label">비밀번호</string>
+    <string name="common_google_play_services_update_title">Google Play 서비스 업데이트</string>
+
+</resources>

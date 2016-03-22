@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/button_padding"
+    android:orientation="vertical" >
+    
+    <ImageView 
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/error"
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/button_padding" 
+        android:contentDescription="@string/app_name"/>
+    
+    <TextView
+        android:id="@+id/text"
+        android:layout_below="@id/image"
+        android:padding="@dimen/button_padding"
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content"
+        android:text="@string/service_unavailable"
+        />
+    <Button
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/btn_submit"
+        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/button_ok"
+        android:text="@android:string/ok" 
+        />
+
+</RelativeLayout>

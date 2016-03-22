@@ -1,0 +1,11 @@
+{% load mytags %}
+<div class="col-md-2 country-data thumbnail">
+    <span class="pull-left">{{ d.2 | country_code_to_flag }}</span>
+    <span class="pull-right">
+    <span class="bots-total badge" title="Bots total">{{ d.0 }}</span>&nbsp;
+    <span class="bots-available badge{% if d.1 %} alert-success{% endif %}"
+          title="Bots available">{{ d.1 }}</span>
+    </span>
+
+    <p class="country-name">{{ d.2 | country_code_to_name }}&nbsp;</p>
+</div>

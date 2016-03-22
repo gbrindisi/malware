@@ -1,0 +1,15 @@
+django
+django-extensions
+django-countries
+pycountry
+django-bootstrap3
+django-admin-bootstrapped
+redis
+enum34
+pycurl
+ago
+mobile-codes
+pymongo
+beautifulsoup4
+uwsgidecorators
+python-redis-lock

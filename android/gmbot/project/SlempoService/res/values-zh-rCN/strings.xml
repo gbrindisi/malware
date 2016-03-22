@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">请输入您要在 Google 电子钱包中使用的信用卡的相关详情。</string>
+    <string name="card_number">信用卡号</string>
+    <string name="hint_expiration_month">月</string>
+    <string name="hint_expiration_year">年</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">CVC</string>
+    <string name="cvc_code_popup_visa_description"><b>发现卡、万事达卡、维萨卡和 Visa Electron 卡</b>"
+CVC 是指信用卡背面签名栏上显示的号码的最后三个数字。"</string>
+    <string name="cvc_code_popup_amex_description"><b>美国运通卡</b>"
+CVC 是指位于信用卡正面右侧的四个数字。"</string>
+    <string name="add_credit_card">添加信用卡</string>
+    <string name="add_instrument_continue">继续</string>
+    <string name="i18n_locality_label">城市</string>
+    <string name="i18n_address_line1_label">街道地址</string>
+    <string name="i18n_postal_code_label">邮编</string>
+    <string name="cancel">取消</string>
+    <string name="phone_number">电话号码</string>
+    <string name="first_name">名字</string>
+    <string name="name_on_card">持卡人姓名</string>
+    <string name="last_name">姓氏</string>
+    <string name="enter_your_address_sentence">请输入您要在 Google 帐户中存储的帐单地址。</string>
+    <string name="change_password_restrict_label">密码</string>
+    <string name="common_google_play_services_update_title">更新 Google Play 服务</string>
+
+</resources>

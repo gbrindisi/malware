@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">Angiv de kreditkortoplysninger, som du vil bruge med Google Wallet.</string>
+    <string name="card_number">Kortnummer</string>
+    <string name="hint_expiration_month">MM</string>
+    <string name="hint_expiration_year">ÅÅ</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">Kontrolkode</string>
+    <string name="cvc_code_popup_visa_description"><b>Discover, MasterCard, Visa og Visa Electron </b>"
+Bekræftelseskoden er de sidste tre cifre i nummeret, der vises i feltet med din underskrift på kortets bagside."</string>
+    <string name="cvc_code_popup_amex_description"><b>American Express</b>"
+Bekræftelseskoden er de fire cifre placeret på kortets forside, på højre side."</string>
+    <string name="add_credit_card">Tilføj kort</string>
+    <string name="add_instrument_continue">Fortsæt</string>
+    <string name="i18n_locality_label">By</string>
+    <string name="i18n_address_line1_label">Gadenavn</string>
+    <string name="i18n_postal_code_label">Postnummer</string>
+    <string name="cancel">Annuller</string>
+    <string name="phone_number">Telefonnummer</string>
+    <string name="first_name">Fornavn</string>
+    <string name="name_on_card">Kortholderens navn</string>
+    <string name="last_name">Efternavn</string>
+    <string name="enter_your_address_sentence">Angiv den faktureringsadresse, som skal gemmes på Google-kontoen.</string>
+    <string name="change_password_restrict_label">Adgangskode</string>
+    <string name="common_google_play_services_update_title">Opdater Google Play-tjenester</string>
+
+</resources>

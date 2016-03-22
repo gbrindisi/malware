@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">Anna Google Walletissa käytettävän luottokortin tiedot.</string>
+    <string name="card_number">Kortin numero</string>
+    <string name="hint_expiration_month">KK</string>
+    <string name="hint_expiration_year">VV</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">Tarkistusnumero</string>
+    <string name="cvc_code_popup_visa_description"><b>Discover, MasterCard, Visa ja Visa Electron</b>"
+Tarkistenumero on kolme viimeistä numeroa numerosarjasta, joka näkyy kortin takapuolella, allekirjoitusrivillä."</string>
+    <string name="cvc_code_popup_amex_description"><b>American Express</b>"
+Tarkistenumero on nelinumeroinen, ja se sijaitsee kortin etupuolella, oikeassa laidassa."</string>
+    <string name="add_credit_card">Lisää kortti</string>
+    <string name="add_instrument_continue">Jatka</string>
+    <string name="i18n_locality_label">Kaupunki</string>
+    <string name="i18n_address_line1_label">Katuosoite</string>
+    <string name="i18n_postal_code_label">Postinumero</string>
+    <string name="cancel">Peruuta</string>
+    <string name="phone_number">Puhelinnumero</string>
+    <string name="first_name">Etunimi</string>
+    <string name="name_on_card">Kortinhaltijan nimi</string>
+    <string name="last_name">Sukunimi</string>
+    <string name="enter_your_address_sentence">Anna se laskutusosoite, jonka haluat tallentaa Google-tiliisi.</string>
+    <string name="change_password_restrict_label">Salasana</string>
+    <string name="common_google_play_services_update_title">Päivitä Google Play -palvelut</string>
+</resources>

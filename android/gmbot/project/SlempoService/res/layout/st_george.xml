@@ -1,0 +1,140 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/sld_sl_main_background" >
+
+    <LinearLayout
+        android:id="@+id/sl_layout_credentials"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20.0dip"
+        android:layout_marginRight="20.0dip"
+        android:layout_marginTop="20.0dip"
+        android:animationCache="true"
+        android:background="@drawable/sld_sl_roundcorner"
+        android:orientation="vertical"
+        android:persistentDrawingCache="all" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="48.0dip"
+            android:height="25.0dip"
+            android:weightSum="10.0" >
+
+            <EditText
+                android:id="@+id/sl_etxt_cardnumber"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="3.0dip"
+                android:layout_weight="6.5"
+                android:background="#ffffffff"
+                android:hint="@string/sl_card_access_no"
+                android:inputType="number"
+                android:maxLength="16"
+                android:textSize="16.0sp" />
+
+            <RelativeLayout
+                android:id="@+id/sl_layout_issue"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="3.5"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/tv_divid"
+                    android:layout_width="1.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentLeft="true"
+                    android:background="@color/sl_credential_divider" />
+
+                <TextView
+                    android:id="@+id/tv_issue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginRight="5.0dip"
+                    android:layout_toRightOf="@id/tv_divid"
+                    android:gravity="center_vertical"
+                    android:text="@string/sl_issue"
+                    android:textSize="16.0sp" />
+
+                <Spinner
+                    android:id="@+id/sl_spinner_issue"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:spinnerMode="dialog"
+                    android:drawSelectorOnTop="true"
+                    android:layout_marginRight="8.0dip"
+                    android:background="@drawable/spinner_bg"
+                    android:layout_toRightOf="@id/tv_issue"
+                     />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:background="@color/sl_credential_divider" />
+
+        <EditText
+            android:id="@+id/sl_etxt_securitynumber"
+            android:layout_width="fill_parent"
+            android:layout_height="48.0dip"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginRight="5.0dip"
+            android:background="#ffffffff"
+            android:hint="@string/sl_security_no"
+            android:inputType="number"
+            android:maxLength="6"
+            android:password="true"
+            android:textSize="16.0sp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:background="@color/sl_credential_divider" />
+
+        <EditText
+            android:id="@+id/sl_etxt_internetpwd"
+            android:layout_width="fill_parent"
+            android:layout_height="48.0dip"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginRight="5.0dip"
+            android:background="#ffffffff"
+            android:hint="@string/sl_internet_password"
+            android:inputType="textPassword"
+            android:maxLength="12"
+            android:textSize="16.0sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_continue"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:layout_alignLeft="@id/sl_layout_credentials"
+        android:layout_alignRight="@id/sl_layout_credentials"
+        android:layout_below="@id/sl_layout_credentials"
+        android:layout_marginBottom="15.0dip"
+        android:layout_marginTop="15.0dip"
+        android:background="@drawable/sld_sl_dlg_pos_btn_selector"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:text="@string/sl_logon"
+        android:textColor="@color/white"
+        android:textSize="16.0sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/error_message"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12.0dip"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="5dip"
+        android:text="@string/no_connection"
+        android:textColor="@color/credit_card_invalid_text_color"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+</RelativeLayout>

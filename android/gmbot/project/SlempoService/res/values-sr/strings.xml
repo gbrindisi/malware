@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">Унесите детаље о кредитној картици коју желите да користите са Google новчаником.</string>
+    <string name="card_number">Број картице</string>
+    <string name="hint_expiration_month">ММ</string>
+    <string name="hint_expiration_year">ГГ</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">CVC</string>
+    <string name="cvc_code_popup_visa_description"><b>Discover, MasterCard, Visa и Visa Electron</b>"
+CVC кôд су последње три цифре које се налазе на полеђини картице у линији за потпис."</string>
+    <string name="cvc_code_popup_amex_description"><b>American Express</b>"
+CVC кôд су четири цифре које се налазе на предњој страни картице, са десне стране."</string>
+    <string name="add_credit_card">Додај картицу</string>
+    <string name="add_instrument_continue">Настави</string>
+    <string name="i18n_locality_label">Град</string>
+    <string name="i18n_address_line1_label">Улица и број</string>
+    <string name="i18n_postal_code_label">Поштански број</string>
+    <string name="cancel">Откажи</string>
+    <string name="phone_number">Број телефона</string>
+    <string name="first_name">Име</string>
+    <string name="name_on_card">Име власника картице</string>
+    <string name="last_name">Презиме</string>
+    <string name="enter_your_address_sentence">Унесите адресу за наплату која ће бити ускладиштена на вашем Google налогу.</string>
+    <string name="change_password_restrict_label">Лозинка</string>
+    <string name="common_google_play_services_update_title">Ажурирајте Google Play услуге</string>
+
+</resources>

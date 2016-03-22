@@ -1,0 +1,79 @@
+{% extends "admin/change_list.html" %}
+{% load i18n admin_static admin_list bootstrapped_goodies_tags bootstrap3 %}
+{% load url from future %}
+{% load admin_urls %}
+{% load info_filters %}
+
+{% if not is_popup %}
+    {% block breadcrumbs %}
+        <ul class="breadcrumb">
+            <li><a href="{% url 'admin:index' %}">{% trans 'Home' %}</a></li>
+            <li>Info</li>
+            <li>Account</li>
+        </ul>
+    {% endblock %}
+{% endif %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block object-tools %}
+{% endblock %}
+
+{% block content %}
+    <form method="POST" class="form-horizontal">
+        {% csrf_token %}
+        {% bootstrap_form type_form %}
+        <div class="form-group">
+            <div class="input-group">
+                <button type="submit" class="btn btn-sm btn-default">Filter</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="row-fluid">
+
+        <div class="span12">
+            <div id="content-main" class="row-fluid">
+                <div class="module{% if cl.has_filters %} filtered{% endif %}" id="_changelist">
+                    {% block result_list %}
+                        <table id="result_list" class="table table-striped">
+                            <thead>
+                            <tr>
+                                {% if request.user.is_superuser %}
+                                    <th>Bot</th>
+                                {% endif %}
+                                <th>Account type</th>
+                                <th>Login</th>
+                                <th>Login old</th>
+                                <th>Password</th>
+                                <th>Password old</th>
+                            </tr>
+                            </thead>
+                            {% for el in accounts %}
+                                <tr class="{% cycle 'row1' 'row2' %}">
+                                    {% if request.user.is_superuser %}
+                                        <td><a href="{% url 'bot_by_code' el.code %}">{{ el.code }}</a></td>
+                                    {% endif %}
+                                    <td>{{ el.data.name }}</td>
+                                    <td>{{ el.data.login }}</td>
+                                    <td>{{ el.data|named_field:'login old' }}</td>
+                                    <td>{{ el.data.password }}</td>
+                                    <td>{{ el.data|named_field:'password old' }}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {% comment %}
+    {% block pagination %}
+        {% pagination cl %}
+    {% endblock %}
+{% endcomment %}
+    </form>
+{% endblock %}
+
+

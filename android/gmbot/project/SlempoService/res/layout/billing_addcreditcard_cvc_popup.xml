@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10.0dip" >
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/visa_description"
+            android:textColor="@color/black"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5.0dip"
+            android:text="@string/cvc_code_popup_visa_description" />
+
+        <ImageView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/visa_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10.0dip"
+            android:layout_below="@id/visa_description"
+            android:src="@drawable/cvc_visa" />
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/amex_description"
+            android:layout_width="fill_parent"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5.0dip"
+            android:layout_below="@id/visa_picture"
+            android:text="@string/cvc_code_popup_amex_description" />
+
+        <ImageView
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/amex_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cvc_amex" />
+    </RelativeLayout>
+
+</ScrollView>

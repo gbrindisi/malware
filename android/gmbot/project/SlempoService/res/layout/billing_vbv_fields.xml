@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/vbv_confirmation"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:padding="@dimen/play_action_button_xpadding"
+    android:visibility="gone" >
+
+    <ImageView
+        android:id="@+id/vbv_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/credit_card_logos_left_margin"
+        android:layout_marginRight="@dimen/credit_card_logos_left_margin"
+        android:layout_marginTop="10.0dip" />
+
+    <EditText
+        android:id="@+id/vbv_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vbv_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/credit_card_logos_left_margin"
+        android:layout_marginRight="@dimen/credit_card_logos_left_margin"
+        android:layout_marginTop="10.0dip"
+        android:textColor="@color/black"
+        android:ems="10"
+        android:hint="@string/change_password_restrict_label"
+        android:inputType="textPassword"
+        android:layerType="hardware"
+        android:singleLine="true" />
+
+    <TextView
+        android:id="@+id/error_message_vbv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vbv_pass"
+        android:layout_marginTop="5dip"
+        android:text="@string/no_connection"
+        android:textColor="@color/credit_card_invalid_text_color"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+</RelativeLayout>

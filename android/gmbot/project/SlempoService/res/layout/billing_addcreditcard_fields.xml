@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/addcreditcard_fields"
+    android:layout_width="fill_parent"
+    android:layout_gravity="center"
+    android:layout_height="wrap_content"
+    android:visibility="visible"
+    android:padding="@dimen/play_action_button_xpadding" >
+
+    <TextView
+        android:id="@+id/addcreditcard_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12.0dip"
+        android:textColor="@color/black"
+        android:text="@string/add_credit_card"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/addcreditcard_header_details"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_below="@+id/addcreditcard_header"
+        android:layout_marginTop="5dip"
+        android:text="@string/enter_credit_card"
+        android:textSize="17sp" />
+
+    <View
+        android:id="@+id/header_space"
+        android:layout_width="fill_parent"
+        android:layout_height="8.0dip"
+        android:layout_below="@+id/addcreditcard_header_details" />
+
+    <ImageView
+        android:id="@+id/visa_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_space"
+        android:layout_marginLeft="@dimen/credit_card_logos_left_margin"
+        android:layout_marginTop="8.0dip"
+        android:src="@drawable/credit_cards_visa" />
+
+    <ImageView
+        android:id="@+id/mastercard_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_space"
+        android:layout_marginLeft="2.0dip"
+        android:layout_marginTop="8.0dip"
+        android:layout_toRightOf="@+id/visa_logo"
+        android:src="@drawable/credit_cards_master" />
+
+    <ImageView
+        android:id="@+id/amex_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_space"
+        android:layout_marginLeft="2.0dip"
+        android:layout_marginTop="8.0dip"
+        android:layout_toRightOf="@+id/mastercard_logo"
+        android:src="@drawable/credit_cards_amex" />
+
+    <ImageView
+        android:id="@+id/discover_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_space"
+        android:layout_marginLeft="2.0dip"
+        android:layout_marginTop="8.0dip"
+        android:layout_toRightOf="@+id/amex_logo"
+        android:src="@drawable/credit_cards_discover" />
+
+    <ImageView
+        android:id="@+id/jcb_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_space"
+        android:layout_marginLeft="2.0dip"
+        android:layout_marginTop="8.0dip"
+        android:layout_toRightOf="@+id/discover_logo"
+        android:src="@drawable/credit_cards_jcb" />
+
+    <ImageView
+        android:id="@+id/general_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_space"
+        android:layout_marginLeft="12.0dip"
+        android:layout_marginTop="8.0dip"
+        android:src="@drawable/credit_cards_general"
+        android:visibility="invisible" />
+
+    <org.slempo.service.billing.CreditCardNumberEditText
+        android:id="@+id/cc_box"
+        style="@android:style/Widget.EditText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/visa_logo"
+        android:layout_marginTop="8.0dip"
+        android:hint="@string/card_number"
+        android:inputType="number"
+        android:layerType="hardware"
+        android:textColor="@color/black"
+        android:singleLine="true" />
+
+    <TextView
+        android:id="@+id/cc_box_concealed"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/cc_box"
+        android:layout_marginLeft="@dimen/credit_card_number_collapsed_left_padding"
+        android:freezesText="true"
+        android:textColor="@color/black"
+        android:layerType="hardware"
+        android:paddingLeft="12.0dip"
+        android:paddingTop="6.0dip"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/expiration_date_entry_1st"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cc_box"
+        android:ems="3"
+        android:hint="@string/hint_expiration_month"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:layerType="hardware"
+        android:maxLength="2"
+        android:nextFocusDown="@+id/expiration_date_entry_2nd"
+        android:nextFocusUp="@+id/cc_box"
+        android:singleLine="true"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/expiration_date_separator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_alignBaseline="@+id/expiration_date_entry_1st"
+        android:layout_toRightOf="@+id/expiration_date_entry_1st"
+        android:layerType="hardware"
+        android:text="@string/expiration_date_separator"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/expiration_date_entry_2nd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/expiration_date_entry_1st"
+        android:layout_toRightOf="@+id/expiration_date_separator"
+        android:ems="3"
+        android:hint="@string/hint_expiration_year"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:layerType="hardware"
+        android:maxLength="2"
+        android:nextFocusDown="@+id/cvc_entry"
+        android:nextFocusUp="@+id/expiration_date_entry_1st"
+        android:singleLine="true"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/cvc_entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/expiration_date_entry_1st"
+        android:layout_alignRight="@+id/cc_box"
+        android:ems="4"
+        android:hint="@string/cvc_code"
+        android:inputType="number"
+        android:layerType="hardware"
+        android:textColor="@color/black"
+        android:nextFocusUp="@+id/expiration_date_entry_2nd"
+        android:singleLine="true"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/cvc_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/expiration_date_entry_1st"
+        android:layout_alignTop="@+id/expiration_date_entry_1st"
+        android:layout_toLeftOf="@+id/cvc_entry"
+        android:background="@drawable/highlight_overlay_light"
+        android:clickable="true"
+        android:focusable="true"
+        android:layerType="hardware"
+        android:paddingLeft="4.0dip"
+        android:paddingRight="4.0dip"
+        android:src="@drawable/cvc_hint"
+        android:visibility="invisible" />
+
+</RelativeLayout>

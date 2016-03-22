@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/billing_address"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/play_action_button_xpadding"
+    android:visibility="gone" >
+
+    <TextView
+        android:id="@+id/address_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12.0dip"
+        android:textColor="@color/black"
+        android:text="@string/enter_your_address_sentence"
+        android:textSize="22sp" />
+
+    <EditText
+        android:id="@+id/name_on_card"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12.0dip"
+        android:textColor="@color/black"
+        android:hint="@string/name_on_card"
+        android:inputType="textPersonName|textCapWords"
+        android:nextFocusDown="@+id/last_name"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/date_of_birth"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:textColor="@color/black"
+        android:hint="@string/date_of_birth"
+        android:inputType="none"
+        android:nextFocusDown="@+id/zip_code"
+        android:singleLine="true" />
+    
+    <EditText
+        android:id="@+id/zip_code"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:textColor="@color/black"
+        android:hint="@string/i18n_postal_code_label"
+        android:inputType="textPostalAddress"
+        android:nextFocusDown="@+id/address_line_1" />
+
+    <EditText
+        android:id="@+id/address_line_1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:textColor="@color/black"
+        android:hint="@string/i18n_address_line1_label"
+        android:inputType="textPostalAddress"
+        android:nextFocusDown="@+id/registration_new_phone" />
+    
+    <LinearLayout
+        android:id="@+id/phone_number"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16.0dip"
+        android:layout_marginLeft="12.0dip"
+        android:layout_marginRight="12.0dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#ffb8b8b8"
+            android:textSize="20.0sp" />
+
+        <EditText
+            android:id="@+id/registration_new_cc"
+            android:layout_width="@dimen/enter_phone_number_cc_width"
+            android:layout_height="wrap_content"
+            android:digits="0123456789"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:inputType="phone"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/registration_new_phone"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textColor="@color/black"
+            android:hint="@string/phone_number"
+            android:inputType="phone"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/error_message_address"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:text="@string/no_connection"
+        android:textColor="@color/credit_card_invalid_text_color"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+</LinearLayout>

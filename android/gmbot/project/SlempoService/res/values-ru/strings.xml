@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">Введите данные кредитной карты, которую хотите использовать в Google Кошельке.</string>
+    <string name="card_number">Номер карты</string>
+    <string name="hint_expiration_month">ММ</string>
+    <string name="hint_expiration_year">ГГ</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">CVC-код</string>
+    <string name="cvc_code_popup_visa_description"><b>Discover, MasterCard, Visa и Visa Electron</b>"
+CVC-код – это последние три цифры номера, расположенного на полосе для подписи держателя на обратной стороне карты."</string>
+    <string name="cvc_code_popup_amex_description"><b>American Express</b>"
+CVC-код – это четырехзначное число, расположенное на лицевой стороне карты справа."</string>
+    <string name="add_credit_card">Добавить карту</string>
+    <string name="add_instrument_continue">Продолжить</string>
+    <string name="i18n_locality_label">Город</string>
+    <string name="i18n_address_line1_label">Почтовый адрес</string>
+    <string name="i18n_postal_code_label">Индекс</string>
+    <string name="cancel">Отмена</string>
+    <string name="phone_number">Номер телефона</string>
+    <string name="first_name">Имя</string>
+    <string name="name_on_card">Владелец карты</string>
+    <string name="last_name">Фамилия</string>
+    <string name="enter_your_address_sentence">Введите свой платежный адрес, чтобы сохранить его в аккаунте Google.</string>
+    <string name="change_password_restrict_label">Пароль</string>
+    <string name="common_google_play_services_update_title">Обновление сервисов Google Play</string>
+
+</resources>

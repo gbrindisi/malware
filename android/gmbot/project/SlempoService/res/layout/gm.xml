@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/cards_bg"
+    android:padding="4.0dip" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/auth_login"
+            style="@style/CardTextEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="55.0dip"
+            android:background="@drawable/bg_post_comments_top"
+            android:hint="@string/mail_or_login"
+            android:inputType="textEmailAddress"
+            android:paddingBottom="10.0dip" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/auth_pass"
+            style="@style/CardTextEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="54.0dip"
+            android:background="@drawable/bg_post_comments_btm"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:paddingBottom="20.0dip"
+            android:paddingTop="10.0dip" />
+
+        <Button
+            android:id="@+id/auth_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8.0dip"
+            android:layout_marginRight="8.0dip"
+            android:layout_marginTop="5.0dip"
+            android:text="@string/log_in"
+            android:textColor="@color/black"
+            android:textSize="16.0dip" />
+
+        <TextView
+            android:id="@+id/error_message"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12.0dip"
+            android:layout_marginTop="5dip"
+            android:text="@string/no_connection"
+            android:textColor="@color/credit_card_invalid_text_color"
+            android:textSize="15sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</ScrollView>

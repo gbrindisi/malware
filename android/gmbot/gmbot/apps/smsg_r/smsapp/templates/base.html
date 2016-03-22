@@ -1,0 +1,109 @@
+<!doctype html>
+{% load i18n bootstrap3 mytags %}
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+         More info: h5bp.com/i/378 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>{% block title %}{% endblock %} | {{ SITE_NAME }}</title>
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+
+    <!-- Mobile viewport optimized: h5bp.com/viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="application/javascript" src="{{ STATIC_URL }}js/jquery-1.10.2.min.js"></script>
+    <script async="async" type="application/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+    <script async="async" type="application/javascript" src="{{ STATIC_URL }}js/modernizr-latest.js"></script>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css" media="screen"/>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-theme.min.css" media="screen"/>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/app.css" media="screen"/>
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+     chromium.org/developers/how-tos/chrome-frame-getting-started -->
+<!--[if lt IE 7]>
+<p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
+<![endif]-->
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{% url "home" %}">{{ SITE_NAME }}</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-left">
+            <li class="{% is_active request '^/$' %}"><a href="{% url "home" %}">Home</a></li>
+            {% if user.is_authenticated %}
+                {% if IS_SYSUSER %}
+                    <li class="{% is_active request '^/app/history' %}"><a href="{% url "history" %}">History</a></li>
+                {% endif %}
+            {% endif %}
+        </ul>
+        <div class="navbar-right" id="id_navbar_right">
+            {% if not user.is_authenticated %}
+                <form class="navbar-form navbar-left form-inline" action="{% url 'login_local' %}" id="auth"
+                      method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Username..." name="username"
+                               id="id_username">
+                        <input type="password" class="form-control" placeholder="Password..." name="password"
+                               id="id_password"/>
+                    </div>
+                    <button type="submit" class="btn btn-default">Log in</button>
+                </form>
+            {% else %}
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                                class="glyphicon glyphicon-user"></span>&nbsp;{{ user }}<span class="caret"></span></a>
+                        <ul class="dropdown-menu pull-left">
+                            {% if user.is_superuser %}
+                                <li><a href='/admin/'><span class='glyphicon glyphicon-wrench'></span>&nbsp;Admin</a>
+                                </li>
+                            {% endif %}
+                            <li>
+                                <a href='{% url 'logout_local' %}'><span class='glyphicon glyphicon-off'></span>&nbsp;Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="page-header">
+        {% block page_header %}{% endblock %}
+    </div>
+    <div id="alerts" class="center-block">
+        {% bootstrap_messages %}
+    </div>
+    {% block content %}
+
+    {% endblock %}
+
+    <footer>
+        {% block footer %}
+            <small>&copy; {{ SITE_NAME }} 2014</small>
+        {% endblock %}
+    </footer>
+
+</div>
+<!-- /container -->
+</body>
+</html>

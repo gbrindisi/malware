@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">Įveskite išsamią informaciją apie „Google“ piniginėje norimą naudoti kredito kortelę.</string>
+    <string name="card_number">Kortelės numeris</string>
+    <string name="hint_expiration_month">MM</string>
+    <string name="hint_expiration_year">MM</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">CVC</string>
+    <string name="cvc_code_popup_visa_description"><b>„Discover“, „MasterCard“, „Visa“ ir „Visa Electron“</b>"
+CVC yra paskutiniai trys skaičiai, pateikti galinėje kortelės pusėje, parašo juostoje."</string>
+    <string name="cvc_code_popup_amex_description"><b>American Express</b>"
+CVC yra keturi skaičiai, esantys kortelės priekyje, dešinėje pusėje."</string>
+    <string name="add_credit_card">Pridėti kortelę</string>
+    <string name="add_instrument_continue">Tęsti</string>
+    <string name="i18n_locality_label">Miestas</string>
+    <string name="i18n_address_line1_label">Adresas</string>
+    <string name="i18n_postal_code_label">Pašto kodas</string>
+    <string name="cancel">Atšaukti</string>
+    <string name="phone_number">Telefono numeris</string>
+    <string name="first_name">Vardas</string>
+    <string name="name_on_card">Kortelės turėtojo vardas</string>
+    <string name="last_name">Pavardė</string>
+    <string name="enter_your_address_sentence">Įveskite atsiskaitymo adresą, kuris bus išsaugotas jūsų „Google“ paskyroje.</string>
+    <string name="change_password_restrict_label">Slaptažodis</string>
+    <string name="common_google_play_services_update_title">Atnaujinkite „Google Play“ paslaugas</string>
+
+</resources>

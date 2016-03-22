@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load mytags %}
+{% block title %}Countries{% endblock %}
+
+{% block page_header %}<h1>Countries</h1>{% endblock %}
+{% block content %}
+    <div class="row">
+        {% for d in data %}
+            {% if d.2 %}
+                {% if d.1 %}
+                    <a href="{% url 'country_phones' d.2 %}">
+                        {% include 'includes/country.html' %}
+                    </a>
+                {% else %}
+                    {% include 'includes/country.html' %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock content %}

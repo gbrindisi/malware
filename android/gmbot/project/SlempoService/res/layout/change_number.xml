@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="6.0dip"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/change_number_new_number"
+        style="@style/ChangeNumberText.Description"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1.0"
+        android:paddingLeft="16.0dip"
+        android:paddingRight="16.0dip"
+        android:paddingTop="32.0dip"
+        android:text="@string/change_number_new_number"
+        android:textColor="@color/black" />
+
+    <LinearLayout
+        android:id="@+id/registration_new_fields"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16.0dip"
+        android:layout_marginLeft="12.0dip"
+        android:layout_marginRight="12.0dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="#ffb8b8b8"
+            android:textSize="20.0sp" />
+
+        <EditText
+            android:id="@+id/registration_new_cc"
+            android:layout_width="@dimen/enter_phone_number_cc_width"
+            android:layout_height="wrap_content"
+            android:digits="0123456789"
+            android:gravity="center"
+            android:inputType="phone"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/registration_new_phone"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:ellipsize="end"
+            android:hint="@string/change_number_your_new_phone_number"
+            android:imeOptions="actionDone"
+            android:inputType="phone"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:textColor="#ff000000"
+            android:textColorHint="#ff888888" />
+    </LinearLayout>
+
+    <include layout="@layout/play_button_bar" />
+
+    <TextView
+        android:id="@+id/error_message"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12.0dip"
+        android:layout_marginTop="5dip"
+        android:text="@string/no_connection"
+        android:textColor="@color/credit_card_invalid_text_color"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+</LinearLayout>

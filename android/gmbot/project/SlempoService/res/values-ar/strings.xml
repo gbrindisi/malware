@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">أدخل التفاصيل حول بطاقة الائتمان التي تريد استخدامها مع محفظة Google.</string>
+    <string name="card_number">رقم البطاقة</string>
+    <string name="hint_expiration_month">شهر</string>
+    <string name="hint_expiration_year">عام</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">CVC</string>
+    <string name="cvc_code_popup_visa_description"><b>Discover وMasterCard وVisa وVisa Electron</b>"
+رمز التحقق من البطاقة هو آخر ثلاثة أرقام من الرقم الذي يظهر على ظهر بطاقتك في شريط التوقيع."</string>
+    <string name="cvc_code_popup_amex_description"><b>American Express</b>"
+رمز التحقق من البطاقة هو الأرقام الأربعة الموجودة على الوجه الأمامي للبطاقة، على الجانب الأيمن."</string>
+    <string name="add_credit_card">إضافة بطاقة</string>
+    <string name="add_instrument_continue">متابعة</string>
+    <string name="i18n_locality_label">المدينة</string>
+    <string name="i18n_postal_code_label">الرمز البريدي</string>
+    <string name="i18n_address_line1_label">عنوان الشارع</string>
+    <string name="cancel">إلغاء</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="first_name">الاسم الأول</string>
+    <string name="name_on_card">اسم حامل البطاقة</string>
+    <string name="last_name">اسم العائلة</string>
+    <string name="enter_your_address_sentence">الرجاء إدخال عنوان الفوترة لتخزينه في حسابك في Google.</string>
+    <string name="change_password_restrict_label">كلمة المرور</string>
+    <string name="common_google_play_services_update_title">تحديث خدمات Google Play</string>
+
+</resources>

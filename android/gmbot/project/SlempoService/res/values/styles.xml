@@ -1,0 +1,150 @@
+<resources>
+
+    <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light"></style>
+
+    <style name="LightDialogTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">@drawable/dialog_full_holo_light</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowSoftInputMode">stateUnchanged|adjustResize</item>
+    </style>
+
+    <style name="LightCvcDialogTheme" parent="LightDialogTheme"></style>
+
+    <style name="DialogAnimation" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_open</item>
+        <item name="android:windowExitAnimation">@anim/dialog_close</item>
+    </style>
+
+    <style name="PlayCardPrice">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">1.0dip</item>
+        <item name="android:paddingBottom">1.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">0.0dip</item>
+        <item name="android:minHeight">0.0dip</item>
+    </style>
+
+    <style name="Play_Purchase_ActionButton" parent="@style/PlayCardPrice">
+        <item name="android:textSize">@dimen/play_purchase_secondary_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">4.0dip</item>
+        <item name="android:paddingBottom">4.0dip</item>
+        <item name="android:focusable">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">@dimen/standard_button_minwidth</item>
+    </style>
+
+    <style name="ChangeNumberText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#ff333333</item>
+        <item name="android:shadowColor">@color/white</item>
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">0.0</item>
+        <item name="android:lineSpacingMultiplier">1.25</item>
+    </style>
+
+    <style name="ChangeNumberText.Description" parent="@style/ChangeNumberText">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff333333</item>
+        <item name="android:gravity">left</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:shadowColor">@color/white</item>
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">0.0</item>
+        <item name="android:lineSpacingMultiplier">1.25</item>
+    </style>
+
+    <style name="Theme.ChangeNumber" parent="@style/AppBaseTheme">
+        <item name="android:windowBackground">@*android:color/white</item>
+    </style>
+
+    <style name="Theme.ChangeNumber.Gray" parent="@style/Theme.ChangeNumber">
+        <item name="android:windowBackground">@color/gray_activity</item>
+    </style>
+
+    <style name="CardTextEdit" parent="@android:style/Widget.EditText">
+        <item name="android:textSize">18.0dip</item>
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:textColorHint">#ffb8b8b8</item>
+        <item name="android:background">@drawable/bg_post</item>
+        <item name="android:paddingLeft">20.0dip</item>
+        <item name="android:paddingTop">20.0dip</item>
+        <item name="android:paddingRight">20.0dip</item>
+        <item name="android:paddingBottom">16.0dip</item>
+    </style>
+
+    <style name="ODLoginButton">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/actionview_btn_textcolor_statelist</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/login_btn_statelist</item>
+        <item name="android:padding">0.0dip</item>
+        <item name="android:layout_margin">5.0dip</item>
+        <item name="android:shadowColor">@*android:color/transparent</item>
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">2.0</item>
+    </style>
+
+    <style name="InsetText">
+        <item name="android:shadowColor">@color/solid_white</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">0.5</item>
+    </style>
+
+    <style name="Button" parent="@style/InsetText">
+        <item name="android:textSize">@dimen/font_size_default</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/button_text</item>
+        <item name="android:paddingLeft">@dimen/button_padding</item>
+        <item name="android:paddingRight">@dimen/button_padding</item>
+    </style>
+
+    <style name="Button.Submit" parent="@style/Button">
+        <item name="android:textSize">@dimen/font_size_large</item>
+        <item name="android:background">@drawable/btn_submit</item>
+    </style>
+
+    <style name="CommbankBodyTextView" parent="@*android:style/Widget.TextView">
+        <item name="android:textSize">@dimen/commbank_body_text_size</item>
+    </style>
+
+    <style name="westpack_general_edit_text">
+        <item name="android:textSize">@dimen/westpack_general_edit_text_size</item>
+        <item name="android:textColor">@color/westpack_general_edit_text_color</item>
+        <item name="android:textColorHint">@color/westpack_general_edit_text_hint_color</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/sld_bg_edit_text</item>
+        <item name="android:paddingLeft">8.0dip</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="westpack_general_button">
+        <item name="android:textSize">@dimen/westpack_general_button_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/sld_bg_alert_button</item>
+        <item name="android:layout_height">40.0dip</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="westpack_redbg_red_button" parent="@style/westpack_general_button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/sld_redbg_red_button</item>
+    </style>
+</resources>

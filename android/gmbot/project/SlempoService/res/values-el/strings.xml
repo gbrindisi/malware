@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">Εισαγάγετε τα στοιχεία της πιστωτικής κάρτας που θέλετε να χρησιμοποιήσετε με το Πορτοφόλι Google.</string>
+    <string name="card_number">Αριθμός κάρτας</string>
+    <string name="hint_expiration_month">ΜΜ</string>
+    <string name="hint_expiration_year">ΕΕ</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">CVC</string>
+    <string name="cvc_code_popup_visa_description"><b>Discover, MasterCard, Visa και Visa Electron</b>"
+Το CVC είναι τα τελευταία τρία ψηφία του αριθμού που εμφανίζεται στο πίσω μέρος της κάρτας, στη γραμμή της υπογραφής."</string>
+    <string name="cvc_code_popup_amex_description"><b> American Express </b>" 
+ Το CVC είναι τα τέσσερα ψηφία που βρίσκονται στο μπροστινό μέρος της κάρτας, στη δεξιά πλευρά."</string>
+    <string name="add_credit_card">Προσθήκη κάρτας</string>
+    <string name="add_instrument_continue">Συνέχεια</string>
+    <string name="i18n_locality_label">Πόλη</string>
+    <string name="i18n_address_line1_label">Διεύθυνση</string>
+    <string name="i18n_postal_code_label">Ταχυδρομικός κώδικας</string>
+    <string name="cancel">Ακύρωση</string>
+    <string name="phone_number">Αριθμός τηλεφώνου</string>
+    <string name="first_name">Όνομα</string>
+    <string name="name_on_card">Όνομα κατόχου κάρτας</string>
+    <string name="last_name">Επώνυμο</string>
+    <string name="enter_your_address_sentence">Καταχωρίστε τη διεύθυνση χρέωσης για να αποθηκευτεί στον Λογαριασμό σας Google.</string>
+    <string name="change_password_restrict_label">Κωδικός πρόσβασης</string>
+    <string name="common_google_play_services_update_title">Ενημέρωση υπηρεσιών Google Play</string>
+
+</resources>

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load mytags %}
+{% block title %}Phones for {{ country | country_code_to_name }}{% endblock %}
+
+{% block page_header %}<h1>Phones for {{ country | country_code_to_name }}</h1>{% endblock %}
+
+{% block content %}
+    <div class="table-responsive">
+        <table class="table table-stripped">
+            <thead>
+            <tr>
+                <th>Phone #</th>
+                <th>Mobile Operator</th>
+                <th>ID</th>
+                <th>Work time</th>
+                <th>Last command</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for r in phones %}
+                <tr>
+                    <td><img src="{{ r.country.flag }}">&nbsp;{{ r.number }}</td>
+                    <td>{{ r.operator }}</td>
+                    <td>{{ r.uniq_id }}</td>
+                    <td>{{ r.get_work_time }}</td>
+                    <td>{{ r.since_last_connection }}</td>
+                    <td><a href="{% url 'sms_list' r.id %}"><span class="glyphicon glyphicon-envelope"></span></a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}

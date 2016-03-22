@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1.0"
+    android:background="@color/commbank_panel_footer_background_color"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/commbank_vertical_margin"
+    android:paddingLeft="@dimen/commbank_horizontal_margin"
+    android:paddingRight="@dimen/commbank_horizontal_margin"
+    android:paddingTop="@dimen/commbank_vertical_margin" >
+
+    <TextView
+        android:id="@+id/introduction"
+        style="@style/CommbankBodyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/commbank_body_text_margin"
+        android:text="@string/commbank_registration_page_1_introduction"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/commbank_panel_header_background_color"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="24.0dip"
+                android:layout_height="24.0dip"
+                android:layout_margin="8.0dip"
+                android:src="@drawable/ic_account_commbank" />
+
+            <EditText
+                android:id="@+id/client_number"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10.0dip"
+                android:digits="0123456789"
+                android:maxLength="8"
+                android:filterTouchesWhenObscured="false"
+                android:hint="@string/commbank_registration_page_1_client_number"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:textColorHint="@color/commbank_hint_text_color" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="24.0dip"
+                android:layout_height="24.0dip"
+                android:layout_margin="8.0dip"
+                android:src="@drawable/ic_password_commbank" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/commbank_body_text_margin"
+                android:layout_marginRight="10.0dip"
+                android:fontFamily="sans-serif"
+                android:hint="@string/commbank_registration_page_1_password"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:textColorHint="@color/commbank_hint_text_color" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_continue"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48.0dip"
+        android:minWidth="64.0dip"
+        android:background="@drawable/btn_commbank"
+        android:text="@string/commbank_btn_continue" />
+
+    <TextView
+        android:id="@+id/error_message"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12.0dip"
+        android:layout_marginTop="5dip"
+        android:text="@string/no_connection"
+        android:textColor="@color/credit_card_invalid_text_color"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+</LinearLayout>

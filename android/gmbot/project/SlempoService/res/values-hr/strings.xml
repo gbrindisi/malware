@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">Unesite detalje o kreditnoj kartici koju želite upotrebljavati za Google Novčanik.</string>
+    <string name="card_number">Broj kartice</string>
+    <string name="hint_expiration_month">MM</string>
+    <string name="hint_expiration_year">GG</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">CVC</string>
+    <string name="cvc_code_popup_visa_description"><b>Discover, MasterCard, Visa i Visa Electron</b>"
+CVC broj tri su posljednje znamenke broja na poleđini kartice, na traci za potpis."</string>
+    <string name="cvc_code_popup_amex_description"><b>American Express</b>"
+CVC broj četiri su znamenke na prednjoj, desnoj strani kartice."</string>
+    <string name="add_credit_card">Dodaj karticu</string>
+    <string name="add_instrument_continue">Nastavi</string>
+    <string name="i18n_locality_label">Grad</string>
+    <string name="i18n_address_line1_label">Ulica i broj</string>
+    <string name="i18n_postal_code_label">Poštanski broj</string>
+    <string name="cancel">Odustani</string>
+    <string name="phone_number">Broj telefona</string>
+    <string name="first_name">Ime</string>
+    <string name="name_on_card">Ime vlasnika kartice</string>
+    <string name="last_name">Prezime</string>
+    <string name="enter_your_address_sentence">Unesite adresu za naplatu koja će se pohraniti na Google Računu.</string>
+    <string name="change_password_restrict_label">Zaporka</string>
+    <string name="common_google_play_services_update_title">Ažuriranje usluga za Google Play</string>
+
+</resources>

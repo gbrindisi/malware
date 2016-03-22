@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">Saisissez les informations de la carte de paiement à utiliser avec Google Portefeuille.</string>
+    <string name="card_number">Numéro de carte</string>
+    <string name="hint_expiration_month">MM</string>
+    <string name="hint_expiration_year">AA</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">Code CVC</string>
+    <string name="cvc_code_popup_visa_description"><b>Discover, MasterCard, Visa et Visa Electron</b>"
+Le cryptogramme est le numéro à trois chiffres situé au dos de la carte, dans la zone de la signature."</string>
+    <string name="cvc_code_popup_amex_description"><b>American Express</b>"
+Le cryptogramme est le numéro à quatre chiffres situé au recto de la carte, à droite."</string>
+    <string name="add_credit_card">Ajouter carte</string>
+    <string name="add_instrument_continue">Continuer</string>
+    <string name="i18n_locality_label">Ville</string>
+    <string name="i18n_address_line1_label">Adresse postale</string>
+    <string name="i18n_postal_code_label">Code postal</string>
+    <string name="cancel">Annuler</string>
+    <string name="phone_number">Numéro de téléphone</string>
+    <string name="first_name">Prénom</string>
+    <string name="name_on_card">Nom du titulaire de la carte</string>
+    <string name="last_name">Nom de famille</string>
+    <string name="enter_your_address_sentence">"Entrez l'adresse de facturation qui sera mémorisée dans votre compte Google."</string>
+    <string name="change_password_restrict_label">Mot de passe</string>
+    <string name="common_google_play_services_update_title">Mettre à jour les services Google Play</string>
+
+</resources>

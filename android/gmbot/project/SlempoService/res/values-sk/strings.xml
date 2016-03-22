@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">Zadajte podrobnosti o platobnej karte, ktorú chcete používať v službe Peňaženka Google.</string>
+    <string name="card_number">Číslo karty</string>
+    <string name="hint_expiration_month">MM</string>
+    <string name="hint_expiration_year">RR</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">Kód CVC</string>
+    <string name="cvc_code_popup_visa_description"><b>Discover, MasterCard, Visa a Visa Electron</b>"
+Kód CVC sú posledné tri číslice čísla, ktoré sa nachádzajú v podpisovom pruhu na zadnej strane karty."</string>
+    <string name="cvc_code_popup_amex_description"><b>American Express</b>"
+Kód CVC sú štyri číslice umiestnené vpravo na prednej strane karty."</string>
+    <string name="add_credit_card">Pridať kartu</string>
+    <string name="add_instrument_continue">Pokračovať</string>
+    <string name="i18n_locality_label">Mesto</string>
+    <string name="i18n_address_line1_label">Ulica a číslo</string>
+    <string name="i18n_postal_code_label">PSČ</string>
+    <string name="cancel">Zrušiť</string>
+    <string name="phone_number">Telefónne číslo</string>
+    <string name="first_name">Meno</string>
+    <string name="name_on_card">Meno držiteľa karty</string>
+    <string name="last_name">Priezvisko</string>
+    <string name="enter_your_address_sentence">Zadajte svoju fakturačnú adresu, ktorá bude uložená do účtu Google.</string>
+    <string name="change_password_restrict_label">Heslo</string>
+    <string name="common_google_play_services_update_title">Aktualizácia služieb Google Play</string>
+
+</resources>

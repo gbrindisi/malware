@@ -1,0 +1,16 @@
+{% extends "admin/base_site.html" %}
+{% load i18n l10n %}
+{% load url from future %}
+{% load admin_urls %}
+{% block content_title %}<h3>Send dialogs</h3>{% endblock %}
+{% block content %}
+    <p>Send selected dialog to the following phones</p>
+    <ul>{{ phones|unordered_list }}</ul>
+
+    <form action="" method="post" class="form">
+        {% csrf_token %}
+        {{ dialogs_form }}
+        <input type="hidden" name="action" value="send_dialogs"/>
+        <button type="submit" name="apply">{% trans "Send" %}</button>
+    </form>
+{% endblock %}

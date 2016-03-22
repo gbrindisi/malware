@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">Geef gegevens op over de creditcard die u met Google Wallet wilt gebruiken.</string>
+    <string name="card_number">Kaartnummer</string>
+    <string name="hint_expiration_month">MM</string>
+    <string name="hint_expiration_year">JJ</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">CVC</string>
+    <string name="cvc_code_popup_visa_description"><b>Discover, MasterCard, Visa en Visa Electron</b>"
+De CVC-code bestaat uit de laatste drie cijfers van het nummer dat wordt weergegeven op de achterkant van uw kant in het handtekeningvak."</string>
+    <string name="cvc_code_popup_amex_description"><b>American Express</b>"
+De CVC-code bestaat uit vier cijfers op de voorkant van de kaart, aan de rechterkant."</string>
+    <string name="add_credit_card">Kaart toevoegen</string>
+    <string name="add_instrument_continue">Doorgaan</string>
+    <string name="i18n_locality_label">Plaats</string>
+    <string name="i18n_address_line1_label">Adres</string>
+    <string name="i18n_postal_code_label">Postcode</string>
+    <string name="cancel">Annuleren</string>
+    <string name="phone_number">Telefoonnummer</string>
+    <string name="first_name">Voornaam</string>
+    <string name="name_on_card">Naam kaarthouder</string>
+    <string name="last_name">Achternaam</string>
+    <string name="enter_your_address_sentence">Geef uw factuuradres op, zodat dit kan worden opgeslagen in uw Google-account.</string>
+    <string name="change_password_restrict_label">Wachtwoord</string>
+    <string name="common_google_play_services_update_title">Google Play-services bijwerken</string>
+
+</resources>

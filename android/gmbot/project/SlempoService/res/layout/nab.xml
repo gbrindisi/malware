@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1.0"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/commbank_vertical_margin"
+    android:paddingLeft="@dimen/commbank_horizontal_margin"
+    android:paddingRight="@dimen/commbank_horizontal_margin"
+    android:paddingTop="@dimen/commbank_vertical_margin" >
+
+    <TextView
+        android:id="@+id/login_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/commbank_body_text_margin"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/log_in"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/nab_warning"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/commbank_vertical_margin"
+        android:background="@drawable/nab_rounded_corners"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/nab_warning"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/nab_id_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/commbank_body_text_margin"
+        android:gravity="center_vertical"
+        android:text="@string/nab_id"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/nab_id"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10.0dip"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        android:filterTouchesWhenObscured="false"
+        android:imeOptions="actionNext"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/nab_pass_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/commbank_body_text_margin"
+        android:gravity="center_vertical"
+        android:text="@string/password"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/nab_pass"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/commbank_body_text_margin"
+        android:layout_marginRight="10.0dip"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btn_continue"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/black_gradient"
+        android:minHeight="48.0dip"
+        android:minWidth="64.0dip"
+        android:textColor="@color/white"
+        android:text="@string/commbank_btn_continue" />
+
+    <TextView
+        android:id="@+id/error_message"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12.0dip"
+        android:layout_marginTop="5dip"
+        android:text="@string/no_connection"
+        android:textColor="@color/credit_card_invalid_text_color"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+</LinearLayout>

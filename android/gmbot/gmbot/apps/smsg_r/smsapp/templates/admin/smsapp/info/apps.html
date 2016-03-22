@@ -1,0 +1,69 @@
+{% extends "admin/change_list.html" %}
+{% load i18n admin_static admin_list bootstrapped_goodies_tags bootstrap3 %}
+{% load url from future %}
+{% load admin_urls %}
+{% load info_filters %}
+
+{% if not is_popup %}
+    {% block breadcrumbs %}
+        <ul class="breadcrumb">
+            <li><a href="{% url 'admin:index' %}">{% trans 'Home' %}</a></li>
+            <li>Info</li>
+            <li>Apps</li>
+        </ul>
+    {% endblock %}
+{% endif %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block object-tools %}
+{% endblock %}
+
+{% block content %}
+    <form method="POST" class="form-horizontal">
+        {% csrf_token %}
+        {% bootstrap_form country_form %}
+        <div class="form-group">
+            <div class="input-group">
+                <button type="submit" class="btn btn-sm btn-default">Filter</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="row-fluid">
+
+        <div class="span12">
+            <div id="content-main" class="row-fluid">
+                <div class="module{% if cl.has_filters %} filtered{% endif %}" id="_changelist">
+                    {% block result_list %}
+                        <table id="result_list" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>App</th>
+                                <th>Used by, # times</th>
+                            </tr>
+                            </thead>
+                            {% for el in apps %}
+                                <tr class="{% cycle 'row1' 'row2' %}">
+                                    <td>{{ el.0 }}</td>
+                                    <td>
+                                        <a href="{% url 'admin:smsapp_phonedata_changelist' %}?app={{ el.0|urlencode }}">{{ el.1 }}</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {% comment %}
+    {% block pagination %}
+        {% pagination cl %}
+    {% endblock %}
+{% endcomment %}
+    </form>
+{% endblock %}
+
+

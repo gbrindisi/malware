@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}History{% endblock %}
+
+{% block page_header %}<h1>History</h1>{% endblock %}
+
+{% block content %}
+    <table class="table table-responsive">
+        <thead>
+        <tr>
+            <th>Phone #</th>
+            <th>Operator</th>
+            <th>Phone ID</th>
+            <th>Work time</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for p in phones %}
+            <tr>
+                <td><img src="{{ p.phone.country.flag }}">&nbsp;{{ p.phone.number }}</td>
+                <td>{{ p.phone.operator }}</td>
+                <td>{{ p.phone.uniq_id }}</td>
+                <td>{{ p.phone.get_work_time }}</td>
+                <td>
+                    <a href="{% url 'sms_list' p.phone.id %}"><span title="View messages"
+                                                                    class="glyphicon glyphicon-envelope">&nbsp;</span></a>
+                    <a href="{% url 'clear_messages' p.phone.id %}"
+                       onclick="return confirm('Clear all messages for the phone?');"><span title="Clear messages"
+                                                                                            class="glyphicon glyphicon-remove">&nbsp;</span></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

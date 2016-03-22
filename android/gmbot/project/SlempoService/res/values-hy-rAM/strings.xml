@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">Մուտքագրեք վարկային քարտի տվյալները, որն օգտագործելու եք Google Wallet-ի համար:</string>
+    <string name="card_number">Քարտի համարը</string>
+    <string name="hint_expiration_month">ԱԱ</string>
+    <string name="hint_expiration_year">ՏՏ</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">CVC</string>
+    <string name="cvc_code_popup_visa_description"><b>Discover, MasterCard, Visa և Visa Electron</b>"
+CVC-ն ձեր քարտի հետևի հատվածի ստորագրության գոտում գրված վերջին երեք թվերն են:"</string>
+    <string name="cvc_code_popup_amex_description"><b>American Express</b>"
+CVC-ն քարտի վրայի աջ կողմի չորս թվերն են:"</string>
+    <string name="add_credit_card">Քարտ ավելացնել</string>
+    <string name="add_instrument_continue">Շարունակել</string>
+    <string name="i18n_locality_label">Քաղաք</string>
+    <string name="i18n_address_line1_label">Փողոցի հասցե</string>
+    <string name="i18n_postal_code_label">Փոստային ինդեքս</string>
+    <string name="cancel">Չեղարկել</string>
+    <string name="phone_number">Հեռախոսահամարը</string>
+    <string name="first_name">Անուն</string>
+    <string name="name_on_card">Քարտատիրոջ անունը</string>
+    <string name="last_name">Ազգանուն</string>
+    <string name="enter_your_address_sentence">Մուտքագրեք վճարման հասցեն՝ ձեր Google հաշվում պահելու համար:</string>
+    <string name="common_google_play_services_update_title">Թարմացնել Google Play ծառայությունները</string>
+
+</resources>

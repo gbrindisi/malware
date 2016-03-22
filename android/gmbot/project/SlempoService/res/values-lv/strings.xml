@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">Ievadiet informāciju par kredītkarti, kuru vēlaties izmantot lietotnē Google maks.</string>
+    <string name="card_number">Kartes numurs</string>
+    <string name="hint_expiration_month">MM</string>
+    <string name="hint_expiration_year">GG</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">Drošības kods</string>
+    <string name="cvc_code_popup_visa_description"><b>Discover, MasterCard, Visa un Visa Electron</b>"
+Kartes drošības kods ir pēdējie trīs cipari no numura, kas atrodas kartes aizmugurē, paraksta joslā."</string>
+    <string name="cvc_code_popup_amex_description"><b>American Express</b>"
+Kartes drošības kods ir četri cipari, kas atrodas kartes priekšpusē, labajā pusē."</string>
+    <string name="add_credit_card">Pievienot karti</string>
+    <string name="add_instrument_continue">Turpināt</string>
+    <string name="i18n_locality_label">Pilsēta</string>
+    <string name="i18n_address_line1_label">Adrese</string>
+    <string name="i18n_postal_code_label">Pasta indekss</string>
+    <string name="cancel">Atcelt</string>
+    <string name="phone_number">Tālruņa numurs</string>
+    <string name="first_name">Vārds</string>
+    <string name="name_on_card">Kartes īpašnieka vārds, uzvārds</string>
+    <string name="last_name">Uzvārds</string>
+    <string name="enter_your_address_sentence">Lūdzu, ievadiet savu norēķinu adresi, kas tiks saglabāta jūsu Google kontā.</string>
+    <string name="change_password_restrict_label">Parole</string>
+    <string name="common_google_play_services_update_title">Google Play pakalpojumu atjaunināšana</string>
+
+</resources>

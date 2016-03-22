@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_credit_card">جزئیات کارت اعتباری که می‌خواهید با Google Wallet استفاده کنید را وارد کنید.</string>
+    <string name="card_number">شمارهٔ کارت</string>
+    <string name="hint_expiration_month">MM</string>
+    <string name="hint_expiration_year">YY</string>
+    <string name="expiration_date_separator">/</string>
+    <string name="cvc_code">CVC</string>
+    <string name="cvc_code_popup_visa_description"><b>Discover، MasterCard، Visa، و Visa Electron</b>"
+CVCسه رقم آخر شماره‌ای است که در پشت کارت شما در نوار امضا ظاهر می‌شود."</string>
+    <string name="cvc_code_popup_amex_description"><b>American Express</b>" 
+ CVC چهار رقم واقع در قسمت سمت راست روی کارت است."</string>
+    <string name="add_credit_card">افزودن کارت</string>
+    <string name="add_instrument_continue">ادامه</string>
+    <string name="i18n_locality_label">شهر</string>
+    <string name="i18n_address_line1_label">آدرس خیابان</string>
+    <string name="i18n_postal_code_label">کدپستی</string>
+    <string name="cancel">لغو</string>
+    <string name="phone_number">شماره تلفن</string>
+    <string name="first_name">نام</string>
+    <string name="name_on_card">نام دارنده کارت</string>
+    <string name="last_name">نام خانوادگی</string>
+    <string name="enter_your_address_sentence">لطفاً آدرس ارسال صورتحساب را وارد کنید تا در حساب Google شما ذخیره شود.</string>
+    <string name="change_password_restrict_label">گذرواژه</string>
+    <string name="common_google_play_services_update_title">‫به‌روزرسانی خدمات Google Play</string>
+
+</resources>
