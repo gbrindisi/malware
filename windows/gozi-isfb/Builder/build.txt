@@ -1,0 +1,6 @@
+1. Редактируем \client.ini, прописываем домены, группу и тайминги.
+2. Выполняем \builder\build.bat. Получаем на выходе \bbuilder\Release\client32.dll и \builder\Release\client64.dll,
+	готовые DLL-ки, содержащие INI-файл.
+3. Криптуем DLL-ки.
+4. Выполняем \builder\installer.bat. Получаем на выходе \builder\Release\installer.exe - готовый дроппер,
+	 содержащий криптованые DLL-ки.

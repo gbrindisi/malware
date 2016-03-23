@@ -1,0 +1,1 @@
+fj installer.cfg

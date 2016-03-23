@@ -1,0 +1,10 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ISFB project. Version 2.2
+//	
+// module: builder.h
+// $Revision: 1 $
+// $Date: 2013-01-17 17:51:14 +0300 (Чт, 17 янв 2013) $
+// description:
+//	Builder enable constants
+
+#define	_USE_BUILDER	TRUE

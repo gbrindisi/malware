@@ -1,0 +1,1 @@
+@for /L %%i IN (%1,1,%2) DO build_crm.bat %%i
